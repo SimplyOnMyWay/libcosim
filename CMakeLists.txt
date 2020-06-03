@@ -115,7 +115,16 @@ find_package(XercesC REQUIRED)
 if(LIBCOSIM_WITH_FMUPROXY)
     find_package(THRIFT REQUIRED)
 endif()
-
+if(APPLE)
+    find_library(COREFOUNDATION_LIBRARY CoreFoundation)
+    if (NOT COREFOUNDATION_LIBRARY)
+        message(FATAL_ERROR "CoreFoundation not found")
+    endif()
+    find_library(CORESERVICES_LIBRARY CoreServices)
+    if (NOT CORESERVICES_LIBRARY)
+        message(FATAL_ERROR "CoreFoundation not found")
+    endif()
+endif()
 # ==============================================================================
 # Targets
 # ==============================================================================
