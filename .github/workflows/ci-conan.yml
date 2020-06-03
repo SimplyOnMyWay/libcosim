@@ -84,9 +84,6 @@ jobs:
   conan-on-macos:
     name: Conan
     runs-on: ${{ matrix.os }}
-    env:
-      CC: gcc-${{ matrix.compiler_version }}
-      CXX: g++-${{ matrix.compiler_version }}
     strategy:
       fail-fast: false
       matrix:
