@@ -89,7 +89,7 @@ jobs:
       matrix:
         os: [macos-latest]
         build_type: [Debug, Release]
-        compiler_version: [11]
+        compiler_version: ['11.0']
         compiler_cppstd: [11]
         option_fmuproxy: ['fmuproxy=True', 'fmuproxy=False']
 
